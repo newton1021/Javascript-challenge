@@ -3,8 +3,77 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>UFO - Challenge</title>
-	</head>
-	<body>
 		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+		
+		
+		<script src="https://d3js.org/d3.v5.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+		
+		
+	</head>
+	
+	
+	<body>
+		<div class = "container-fluid">
+			<div class="row">
+				
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<header class="header">
+						<h1>UFO: They are out there</h1>
+						<!--<img class="nav-ufo" src="../static/images/nasa.jpg">-->
+						
+					</header>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3">
+					
+					
+					
+					
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-md-12">
+								<h3>Data Fliler</h3>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<button class="btn btn-standard" id="clear" type="button" name="button">Clear</button>
+									<br>
+									<h3>Date:</h3><select id="datetime" onchange="changeFilter(this)"></select>
+									<h3>City:</h3><select id="city" onchange="changeFilter(this)"></select>
+									<h3>State:</h3><select id="state" onchange="changeFilter(this)"></select>
+									<h3>Country:</h3><select id="country" onchange="changeFilter(this)"></select>
+									<h3>Shape:</h3><select id="shape" onchange="changeFilter(this)"></select>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div> <!-- column -->
+				<div class = "col-md-9" id="table-area">
+					
+					<table class = "table table-striped">
+						<thead>
+							<tr>
+								<th>datetime</th>
+								<th>city</th>
+								<th>state</th>
+								<th>country</th>
+								<th>shape</th>
+								<th>durationMinutes</th>
+								<th>comments</th>			
+							</tr>
+						</thead>
+						<tbody class="table-body"></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		
+		<script src="../static/js/data.js"></script>
+		<script src="../static/js/app.js"></script>
 	</body>
 </html>
