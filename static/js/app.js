@@ -33,7 +33,7 @@ clearBtn.on("click", showAllData)
 //});
 
 //run the filter when pushed.
-
+ids = ["datetime", 'city','state','country','shape'];
 
 filterData = {
 	"datetime": new Set(),
@@ -43,13 +43,25 @@ filterData = {
 	'shape': new Set()
 }
 
-
+function clearSelection(currentFilter = "") {
+	ids.forEach(id => {
+		if (currentFilter != id) {
+			d3.select('#' + id).property('value', "")
+		}
+	})
+}
 
 function filterSetup(id) {
 	var selector = d3.select('#' + id)
 	var vals = [...filterData[id]]
-	
-	vals.sort((a,b) => a > b).forEach(x => {
+	var v
+	if(id != "datetime") {
+		v = vals.sort((a,b) => a > b)
+	}
+	else {
+		v = vals;
+	}
+	v.forEach(x => {
 		selector.append('option')
 		.text(x)
 		.property('value', x)
@@ -60,7 +72,7 @@ function filterSetup(id) {
 
 
 function init() {
-		
+	
 	data.forEach(ufo => {
 		Object.entries(ufo).forEach(([key, value]) => {
 			if(key != 'durationMinutes' && key != 'comments' ) {
@@ -70,17 +82,14 @@ function init() {
 		
 	});
 	
-	filterSetup('datetime');
-	filterSetup('city');
-	filterSetup('state');
-	filterSetup('country');
-	filterSetup('shape');
+	
+	ids.forEach(id => filterSetup(id));
 }
 
 
 
 function showAllData () {
-	
+	clearSelection();
 	tbody.selectAll("tr").remove();
 	
 	data.forEach(ufo => {
@@ -98,9 +107,10 @@ function showAllData () {
 function changeFilter(filter){
 	//d3.event.preventDefault();
 	
+	clearSelection(filter.id);
 	
 	filteredData = tableData.filter(ufo => ufo[filter.id] == filter.value);
-	//filteredData = tableData.filter(ufo => ufo['state'] == "ma");
+	
 	tbody.selectAll("tr").remove();
 	
 	console.log(filteredData);
@@ -113,6 +123,8 @@ function changeFilter(filter){
 		})
 		
 	});
+	
+	
 	
 	
 }

@@ -8,27 +8,31 @@
 		
 		
 		<script src="https://d3js.org/d3.v5.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+		<link rel="stylesheet" type="text/css" href="static/css/style.css">
 		
 		
 	</head>
 	
-	
+	<!---- Body Start ------>
 	<body>
-		<div class = "container-fluid">
+		
+		<div class="container-fluid">
 			<div class="row">
-				
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<header class="header">
-						<h1>UFO: They are out there</h1>
-						<!--<img class="nav-ufo" src="../static/images/nasa.jpg">-->
+				<div class="col-12">
+					<img class="img img-fluid" src="../static/images/nasa.jpg" alt="NASA - Earth">
+					
+						<h1 class="overlay-text">UFO: <span class="msg">They are out there!</span></h1>
 						
-					</header>
+
 				</div>
 			</div>
-			<div class="row">
+		</div>
+		
+		
+
+		<div class = "container-fluid">
+
+		<div class="row">
 				<div class="col-md-3">
 					
 					
@@ -37,7 +41,7 @@
 					<div class="container-fluid">
 						<div class="row">
 							<div class="col-md-12">
-								<h3>Data Fliler</h3>
+								<h2>Data Flilter</h2>
 							</div>
 							<div class="row">
 								<div class="col-md-12">
@@ -54,7 +58,9 @@
 					</div>
 				</div> <!-- column -->
 				<div class = "col-md-9" id="table-area">
-					
+					<div class="row">
+						<h2>Sightings</h2>
+					</div>
 					<table class = "table table-striped">
 						<thead>
 							<tr>
@@ -73,7 +79,7 @@
 			</div>
 		</div>
 		
-		<script src="../static/js/data.js"></script>
-		<script src="../static/js/app.js"></script>
+		<script src="static/js/data.js"></script>
+		<script src="static/js/app.js"></script>
 	</body>
 </html>

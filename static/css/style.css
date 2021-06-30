@@ -11,6 +11,11 @@ body {
   background-color: #1b3146;
 }
 
+
+.btn {
+  color: #006699;
+}
+
 /* The wrapper contains all of the page's content besides the footer, which is pushed to the bottom of the page */
 .wrapper {
   position: relative;
@@ -37,6 +42,11 @@ body {
   left: 0;
   padding: 5px;
   background: #1b3146;
+}
+
+select {
+  color: navy;
+  font-size: 30px
 }
 
 .navbar {
@@ -191,11 +201,39 @@ select {
     animation: smaller-title 1.2s forwards linear;
   }
 }
+.overlay-text {
+  position:absolute;
+  top: 200px;
+  left: 70px;
+  font-size: 7.5rem;
+  
+  animation-duration: 3s;
+  animation-name: title;
+}
 
+.msg {
+    animation-duration: 7s;
+  
+  animation-name: subtitle;
+  
+}
+
+.msg::after {
+  opacity: 1;
+}
+
+
+.img {
+  
+  width: 95%;
+  margin-left: 2.5%;
+  margin-right: 2.5;
+}
 /* keyframe animations which will be used to animate the title */
 @keyframes title {
   from {
     opacity: 0;
+    font-size: 1rem;
   }
 
   to {
@@ -219,8 +257,12 @@ select {
   from {
     opacity: 0;
   }
-
+50% {
+  opacity: 0;
+}
   to {
     opacity: 1;
   }
 }
+
+
